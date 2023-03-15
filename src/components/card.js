@@ -1,23 +1,22 @@
 import React from "react";
 import { useState } from "react";
 
-const Cards = ({ item, shows }) => {
+const Cards = ({ item,cart,setCart}) => {
   const { price, img } = item;
-
-  const [sec,setsec]=useState("ADD TO CART");
-  const [count,setcount]=useState(1);
-   const eventchange=()=>{
-        if(count===0)
-        {
-          setsec("ADD TO CART");
-          setcount(1)
-        }
-        if(count===1)
-        {
-          setsec("REMOVE FROM CART");
-          setcount(0);
-        }
-     }  
+  const shows= (item,id) => {
+  
+    if(cart.indexOf(item) === -1) 
+     {
+       setCart([...cart, item]);
+        return false; 
+     }
+  else
+  {
+  const arr = cart.filter((item) => item.id !== id);
+   setCart(arr);
+   return true;
+ }
+}
   return (
     <div className="cards">
       <div className="image_box">
@@ -25,7 +24,7 @@ const Cards = ({ item, shows }) => {
       </div>
       <div className="details">
         <p>Price - {price}/-</p>
-        <button onClick={()=>{shows(item,item.id);eventchange()}}>{sec}</button>
+        <button onClick={()=>shows(item,item.id)}>{!cart.includes(item)?"ADD TO CART":"REMOVE FROM CART"}</button>
       </div>
     </div>
   );

@@ -16,24 +16,25 @@ const App = () => {
   const [check,setcheck]=useState(0);
 
 
-  const shows= (item,id) => {
+//   const shows= (item,id) => {
   
-    if(cart.indexOf(item) === -1) 
-     {
-       setCart([...cart, item]);
-        return false; 
-     }
-  else
-  {
-  const arr = cart.filter((item) => item.id !== id);
-   setCart(arr);
-   return true;
- }
-}
+//     if(cart.indexOf(item) === -1) 
+//      {
+//        setCart([...cart, item]);
+//         return false; 
+//      }
+//   else
+//   {
+//   const arr = cart.filter((item) => item.id !== id);
+//    setCart(arr);
+//    return true;
+//  }
+// }
 const mobile=()=>{
   setnewdata(list.filter(item=>{
     return item.type==="mobile"
   }))
+  setcheck(1)
   console.log(newdata);
   
 }
@@ -73,7 +74,7 @@ const mobile=()=>{
         <button className="btn" onClick={alldata} style={{backgroundColor:"teal"}}>ALLPRODUCT</button>
        </div>
            {display ? (
-              <Body shows={shows} data={newdata} check={check}/>
+              <Body  data={newdata} check={check} cart={cart} setCart={setCart}/>
             ) : (
               <Cart cart={cart} />)
            }

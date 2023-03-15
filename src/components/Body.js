@@ -3,7 +3,7 @@ import Cards from "./card";
 import "../styles/Body.css";
 import list from "../data";
 
-const Body = ({ shows,data,check}) => {
+const Body = ({ data,check,cart,setCart}) => {
 
 
   return (
@@ -12,12 +12,12 @@ const Body = ({ shows,data,check}) => {
        check===0?(
 
         list.map((item) => (
-            <Cards key={item.id} item={item} shows={shows} />
+            <Cards key={item.id} item={item} cart={cart} setCart={setCart} />
           ))
 
        ):(
         data.map((item) => (
-            <Cards key={item.id} item={item} shows={shows} />
+            <Cards key={item.id} item={item}  cart={cart} setCart={setCart}/>
           ))
        )
       }
