@@ -16,20 +16,7 @@ const App = () => {
   const [check,setcheck]=useState(0);
 
 
-//   const shows= (item,id) => {
-  
-//     if(cart.indexOf(item) === -1) 
-//      {
-//        setCart([...cart, item]);
-//         return false; 
-//      }
-//   else
-//   {
-//   const arr = cart.filter((item) => item.id !== id);
-//    setCart(arr);
-//    return true;
-//  }
-// }
+
 const mobile=()=>{
   setnewdata(list.filter(item=>{
     return item.type==="mobile"
