@@ -7,13 +7,11 @@ const Cards = ({ item,cart,setCart}) => {
     if(cart.indexOf(item) === -1) 
      {
        setCart([...cart, item]);
-        return false; 
      }
   else
   {
   const arr = cart.filter((item) => item.id !== id);
    setCart(arr);
-   return true;
  }
 }
   return (
