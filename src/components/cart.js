@@ -1,7 +1,7 @@
 import React, {useState,useEffect } from "react";
 import "../styles/cart.css";
 
-const Cart = ({ cart}) => {
+const Cart = ({ cart,setCart}) => {
   const [price, setPrice] = useState(0);
 
   const handlePrice = () => {
@@ -9,6 +9,11 @@ const Cart = ({ cart}) => {
     cart.map((item) => (ans += item.amount * item.price));
     setPrice(ans);
   };
+  const removeitem=(id)=>{
+    setCart(cart.filter(item=>{
+      return item.id!==id;
+    }))
+  }
 
  useEffect(() => {
    handlePrice();
@@ -23,6 +28,7 @@ const Cart = ({ cart}) => {
           </div>
           <div style={{display:"flex"}} >
             <span style={{marginRight:"20px",color:"blue"}}>PRICE:{item.price}</span>
+            <button onClick={()=>removeitem(item.id)}>REMOVE FROM CART</button>
           </div>
         </div>
       ))}

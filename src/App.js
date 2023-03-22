@@ -48,7 +48,7 @@ const mobile=()=>{
     console.log(newdata)
     setcheck(1)
   }
-
+  
 
   return (
     <React.StrictMode>
@@ -63,7 +63,7 @@ const mobile=()=>{
            {display ? (
               <Body  data={newdata} check={check} cart={cart} setCart={setCart}/>
             ) : (
-              <Cart cart={cart} />)
+              <Cart cart={cart} setCart={setCart}/>)
            }
       
       </div>
