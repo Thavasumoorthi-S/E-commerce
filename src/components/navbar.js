@@ -6,7 +6,7 @@ const Navbar = ({ setDisplay, size }) => {
     <nav>
       <div className="nav_box">
         <span className="my_shop" onClick={() => setDisplay(true)} style={{paddingLeft:"35%"}}>
-          KANNAN ONLINE SHOPPING
+          KANNAN ONLINE SHOPPINGS 
         </span>
         <div className="cart" style={{paddingRight:"2px"}} onClick={() => setDisplay(false)}>
           <span>
